@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --sidebar-dark-color: #353e43;
+    --primary-color: #695CFE;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --font-color: black;
+    --icon-color: rgb(69, 76, 151);
+
+    /* transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+/* ====================sidebar================= */
+
+.container {
+    display: flex;
+    overflow: hidden;
+}
+
+.container .sidebar {
+    position: relative;
+    background-color: var(--sidebar-color);
+    height: 100vh;
+    width: 280px;
+    transition: var(--tran-04);
+}
+
+.sidebar .logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo img {
+    height: 45px;
+    border-radius: 10px;
+}
+
+.logo .logotext {
+    font-size: large;
+    font-weight: 500;
+}
+
+.sidebar .toggle {
+    position: absolute;
+    top: 35px;
+    right: -20px;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--primary-color-light);
+}
+
+
+/* ============================Sidebar Collapse==================== */
+
+.sidebar.collapsed {
+    width: 80px;
+    transition:  var(--tran-04);
+}
+
+.sidebar.collapsed .logo {
+    margin-left: 15px;
+}
+
+.sidebar.sidebar.collapsed .logo .logotext {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.collapsed .toggle {
+    top: 20px;
+    transform: rotate(180deg);
+}
+
+
+/* ===========================Menubar=========================== */
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 30;
+}
+
+.nav-links {
+    margin: 10px 0;
+}
+
+.nav-links a .icon {
+    font-size: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 30px 10px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    height: 40px;
+    gap: 20px;
+    color: var(--sidebar-dark-color);
+
+}
+
+.nav-links a:hover {
+    background-color: var(--icon-color);
+    color: var(--sidebar-color);
+}
+
+.nav-text {
+    font-size: 1rem;
+}
+
+/* ================================bottom menu========================== */
+
+.bottom {
+    margin: 150px 0 20px 0;
+}
+
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+.sidebar.collapsed .icon {
+    background-color: var(--icon-color);
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: var(--toggle-color);
+}
+
+
+
+
+/* ===========================NavBar=========================== */
+
+
+
+.container .navbar {
+    background-color: #707070;
+    width: 100%;
+}
